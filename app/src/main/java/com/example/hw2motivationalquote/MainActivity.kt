@@ -31,14 +31,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            displayQuote()
+            DisplayQuote()
 
         }
     }
 }
 
 @Composable
-fun displayQuote() {
+fun DisplayQuote() {
 
     var q by remember { mutableStateOf(generateQuote()) }
 
@@ -97,7 +97,7 @@ fun generateQuote(): String {
 @Composable
 fun GreetingPreview() {
     HW2MotivationalQuoteTheme {
-        displayQuote()
+        DisplayQuote()
         generateQuote()
     }
 }
