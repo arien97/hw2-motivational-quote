@@ -16,9 +16,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.hw2motivationalquote.ui.theme.HW2MotivationalQuoteTheme
 import kotlin.random.Random
 
@@ -40,15 +44,22 @@ fun displayQuote() {
 
     Column(
         modifier = Modifier.padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+        Text(
+            text = q,
+            modifier = Modifier.padding(top = 32.dp),
+            color = Color(0xff10b0ad),
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+        )
+
         Button(onClick = { q = generateQuote() }) {
             Text(text = "New Quote")
         }
 
-        Text(
-            text = q
-        )
     }
 
 }
